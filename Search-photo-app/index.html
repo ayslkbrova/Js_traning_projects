@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Jquery link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Search photo</title>
+</head>
+
+<body>
+    <section class="header">
+        <nav class="navbar">
+    
+            <div class="logo_header">
+              <a href="#" class="logo"> <i class=" fa fa-light fa-camera"></i> Photo</a>
+              
+              <button class="navbar_toggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+           
+            <ul class="main_nav">
+              <li>
+                <a href="#" class="nav_links">Home</a>
+              </li>
+              <li>
+                <a href="#" class="nav_links">Products</a>
+              </li>
+              <li>
+                <a href="#" class="nav_links">About</a>
+              </li>
+              <li>
+                <a href="#" class="nav_links">Contact</a>
+              </li>
+              <li>
+                <div class="button"><a href="#">JOIN</a></div>
+              </li>
+            </ul>
+        
+          </nav>
+
+        <div class="search">
+            <div class="search-wrapper">
+                <form action="" id="form">
+                    <input placeholder="Search photos..." type="text" id="searchInput">
+                    <button id="searchButton"><i class="fa fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <h1 class="photoValue"></h1>
+    <div class="result">
+
+        <div class="card"><img src="image/pexels-andy-coffie-16864829.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-evgeniy-petkevich-16857628.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-hatice-baran-13264774.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-josh-hild-16248184.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-ánh-đặng-16446090.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-duran-eki̇z-duranekz-16307711.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-efe-ersoy-16080108.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-margarida-da-mota-15005661.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-mathilde-langevin-16606650.jpg" alt=""></div>
+        <div class="card"><img src="image/pexels-stayhereforu-16612365.jpg" alt=""></div>
+
+    </div>
+    <div class="scrollButton" onclick="scrollElement()"><i class="fa fa-light fa-up-long"></i> </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
