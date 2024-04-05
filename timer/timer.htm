@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            background-color: #272727;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        p,h1{
+            color:#D0D0D0;
+            font-size: 5em;
+        }
+        h1{
+            font-size: 4rem;
+        }
+        button{
+            padding: 1rem 1rem;
+            border-radius: 15px;
+            color: #000;
+            transition: .3s;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #fff;
+            color: #272727;
+        }
+        ul{
+            list-style-type:none ;
+        }
+        li{
+            color: #D0D0D0;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <p>00:00:00</p>
+    <div class="buttons">
+        <button id='startbtn' onclick="go()">Start</button>
+        <button onclick="secance()">secance</button>
+    </div>
+    <ul></ul>
+    <script>
+        let p = document.querySelector('p');
+        let startbtn = document.querySelector("#startbtn")
+        let h = 0;
+        let m = 0;
+        let s = 0;
+        let sec = [];
+        let flaf = false
+        let interval;
+        const go = () => {
+            flaf = !flaf;
+            if (flaf) {
+                interval = setInterval(() => {
+                    startbtn.innerHTML = 'start'
+                    s++;
+                    if (s == 60) {
+                        s = 0;
+                        m++;
+                    }
+                    else if (m == 60) {
+                        m = 0;
+                        h++;
+                    }
+                    p.innerHTML = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+
+
+                }, 10);
+            } else {
+                startbtn.innerHTML = 'stop'
+                clearInterval(interval)
+            }
+        }
+        function secance() {
+            let kod = ''
+            console.log(sec);
+            sec.push(p.innerHTML);
+            for (let i = 0; i < sec.length; i++) {
+                kod += `<li>${sec[i]}</li>`;
+            }
+            document.querySelector("ul").innerHTML = kod
+        }
+    </script>
+</body>
+
+</html>
