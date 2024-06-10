@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.quote-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px;
+}
+
+.quote-text {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.quote-author {
+    font-size: 18px;
+    font-weight: 700;
+    color: #555;
+    margin: 0;
+}
+
+.quote-button,.tweet-button, .speak-button  {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.quote-button:hover, .tweet-button:hover, .speak-button:hover {
+    background-color: #0056b3;
+}
