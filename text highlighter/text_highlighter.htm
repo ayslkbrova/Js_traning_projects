@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Text</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 60%;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: calc(100% - 100px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: dodgerblue;
+        }
+
+        #content {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background-color: #ffcc00;
+            padding: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="searchInput" placeholder="Search text" oninput="highlightText()">
+
+    <p id="content">On a warm summer day, families gathered at the beach to enjoy the sunshine, with children eagerly
+        building sandcastles near the shore, while others splashed in the gentle waves, parents setting up colorful
+        umbrellas and blankets, unpacking picnic baskets filled with delicious food, refreshing drinks, and sweet
+        treats, seagulls circling above, occasionally swooping down to snatch a stray crumb, the air filled with
+        laughter and the sound of distant music, everyone basking in the joy of the moment, completely at ease, savoring
+        the simple pleasures of life together.</p>
+
+    <script>
+        function highlightText() {
+            let input = document.querySelector('#searchInput');
+            let content = document.querySelector('#content');
+            let originalText = content.innerText;
+            content.innerHTML = originalText;
+            if (input.value) {
+                let pattern = new RegExp(`(${input.value})`, 'gi');
+                let newText = originalText.replace(pattern, '<span class="highlight">$1</span>');
+                content.innerHTML = newText;
+            }
+        }
+    </script>
+</body>
+
+</html>
